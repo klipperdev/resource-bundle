@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Converter Registry -->
+        <service id="klipper_resource.converter_registry" class="Klipper\Component\Resource\Converter\ConverterRegistry" public="true">
+            <argument type="collection" />
+        </service>
+
+        <service id="Klipper\Component\Resource\Converter\ConverterRegistry" alias="klipper_resource.converter_registry" />
+        <service id="Klipper\Component\Resource\Converter\ConverterRegistryInterface" alias="klipper_resource.converter_registry" />
+    </services>
+</container>

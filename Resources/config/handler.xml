@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Form Handler -->
+        <service id="klipper_resource.form_handler" class="Klipper\Component\Resource\Handler\FormHandler" public="true">
+            <argument type="service" id="klipper_resource.converter_registry" />
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="request_stack" />
+            <argument type="service" id="translator" />
+            <argument>%klipper_resource.form_handler_default_limit%</argument>
+            <argument>%klipper_resource.form_handler_max_limit%</argument>
+        </service>
+
+        <service id="Klipper\Component\Resource\Handler\FormHandler" alias="klipper_resource.form_handler" />
+        <service id="Klipper\Component\Resource\Handler\FormHandlerInterface" alias="klipper_resource.form_handler" />
+    </services>
+</container>
