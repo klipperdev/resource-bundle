@@ -72,8 +72,6 @@ final class DomainPassTest extends TestCase
 
     /**
      * @dataProvider getBundles
-     *
-     * @param array $bundles
      */
     public function testProcessWithoutService(array $bundles): void
     {
@@ -130,8 +128,7 @@ final class DomainPassTest extends TestCase
     /**
      * Gets the container.
      *
-     * @param array $bundles
-     * @param bool  $empty
+     * @param bool $empty
      *
      * @return ContainerBuilder
      */

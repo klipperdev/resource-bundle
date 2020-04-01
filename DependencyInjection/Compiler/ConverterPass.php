@@ -56,8 +56,6 @@ class ConverterPass implements CompilerPassInterface
      *
      * @throws InvalidConfigurationException When the converter name is not got
      * @throws \Exception
-     *
-     * @return string
      */
     protected function getType(ContainerBuilder $container, $serviceId): string
     {

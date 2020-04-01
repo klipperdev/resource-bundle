@@ -126,8 +126,6 @@ final class ConverterPassTest extends TestCase
     /**
      * Gets the container.
      *
-     * @param array $bundles
-     *
      * @return ContainerBuilder
      */
     protected function getContainer(array $bundles = [])

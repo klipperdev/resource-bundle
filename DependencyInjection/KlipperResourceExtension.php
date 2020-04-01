@@ -65,8 +65,6 @@ class KlipperResourceExtension extends Extension
      * Get the object factory definition.
      *
      * @param array $config The config
-     *
-     * @return Definition
      */
     private function getObjectFactoryDefinition(array $config): Definition
     {

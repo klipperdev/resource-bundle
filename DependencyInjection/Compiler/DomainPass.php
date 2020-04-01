@@ -43,8 +43,6 @@ class DomainPass implements CompilerPassInterface
      * Get the resolve target classes.
      *
      * @param ContainerBuilder $container The container
-     *
-     * @return array
      */
     private function getResolveTargets(ContainerBuilder $container): array
     {
