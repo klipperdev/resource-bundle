@@ -11,7 +11,7 @@
 
 namespace Klipper\Bundle\ResourceBundle\Tests\DependencyInjection\Compiler;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Bundle\ResourceBundle\DependencyInjection\Compiler\DomainPass;
 use Klipper\Bundle\ResourceBundle\Tests\Fixtures\Domain\CustomDomain;
 use Klipper\Component\Resource\Domain\DomainFactory;
