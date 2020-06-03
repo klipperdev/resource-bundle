@@ -28,20 +28,11 @@ use Symfony\Component\Filesystem\Filesystem;
  */
 final class ConverterPassTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    protected $rootDir;
+    protected ?string $rootDir = null;
 
-    /**
-     * @var Filesystem
-     */
-    protected $fs;
+    protected ?Filesystem $fs = null;
 
-    /**
-     * @var ConverterPass
-     */
-    protected $pass;
+    protected ?ConverterPass $pass = null;
 
     protected function setUp(): void
     {
@@ -125,10 +116,8 @@ final class ConverterPassTest extends TestCase
 
     /**
      * Gets the container.
-     *
-     * @return ContainerBuilder
      */
-    protected function getContainer(array $bundles = [])
+    protected function getContainer(array $bundles = []): ContainerBuilder
     {
         $container = new ContainerBuilder(new ParameterBag([
             'kernel.cache_dir' => $this->rootDir.'/cache',

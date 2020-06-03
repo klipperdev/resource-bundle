@@ -20,27 +20,18 @@ use Klipper\Component\Resource\Converter\ConverterInterface;
  */
 class CustomConverter implements ConverterInterface
 {
-    /**
-     * @var string
-     */
-    protected $name = '';
+    protected string $name = '';
 
     public function __construct($name = '')
     {
         $this->name = $name;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function convert(string $content): array
     {
         return [];

@@ -19,14 +19,8 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class DomainPass implements CompilerPassInterface
 {
-    /**
-     * @var null|array
-     */
-    private $resolveTargets;
+    private ?array $resolveTargets = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function process(ContainerBuilder $container): void
     {
         if (!$container->hasDefinition('klipper_resource.domain_factory')

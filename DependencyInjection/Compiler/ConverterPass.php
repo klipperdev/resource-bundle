@@ -22,9 +22,6 @@ use Symfony\Component\DependencyInjection\Definition;
  */
 class ConverterPass implements CompilerPassInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function process(ContainerBuilder $container): void
     {
         if (!$container->hasDefinition('klipper_resource.converter_registry')) {
@@ -57,7 +54,7 @@ class ConverterPass implements CompilerPassInterface
      * @throws InvalidConfigurationException When the converter name is not got
      * @throws \Exception
      */
-    protected function getType(ContainerBuilder $container, $serviceId): string
+    protected function getType(ContainerBuilder $container, string $serviceId): string
     {
         $def = $container->getDefinition($serviceId);
         $class = $this->getRealValue($container, $def->getClass());

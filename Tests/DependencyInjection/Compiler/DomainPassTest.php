@@ -32,20 +32,11 @@ use Symfony\Component\Filesystem\Filesystem;
  */
 final class DomainPassTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    protected $rootDir;
+    protected ?string $rootDir = null;
 
-    /**
-     * @var Filesystem
-     */
-    protected $fs;
+    protected ?Filesystem $fs = null;
 
-    /**
-     * @var DomainPass
-     */
-    protected $pass;
+    protected ?DomainPass $pass = null;
 
     protected function setUp(): void
     {
@@ -125,14 +116,7 @@ final class DomainPassTest extends TestCase
         static::assertSame('addResolveTargets', $calls[0][0]);
     }
 
-    /**
-     * Gets the container.
-     *
-     * @param bool $empty
-     *
-     * @return ContainerBuilder
-     */
-    protected function getContainer(array $bundles, $empty = false)
+    protected function getContainer(array $bundles, bool $empty = false): ContainerBuilder
     {
         $container = new ContainerBuilder(new ParameterBag([
             'kernel.cache_dir' => $this->rootDir.'/cache',

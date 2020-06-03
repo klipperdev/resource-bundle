@@ -26,20 +26,11 @@ use Symfony\Component\Filesystem\Filesystem;
  */
 final class TranslatorPassTest extends TestCase
 {
-    /**
-     * @var string
-     */
-    protected $rootDir;
+    protected ?string $rootDir = null;
 
-    /**
-     * @var Filesystem
-     */
-    protected $fs;
+    protected ?Filesystem $fs = null;
 
-    /**
-     * @var TranslatorPass
-     */
-    protected $pass;
+    protected ?TranslatorPass $pass = null;
 
     protected function setUp(): void
     {
@@ -63,12 +54,7 @@ final class TranslatorPassTest extends TestCase
         static::assertFalse($container->has('translator.default'));
     }
 
-    /**
-     * Gets the container.
-     *
-     * @return ContainerBuilder
-     */
-    protected function getContainer(array $bundles = [])
+    protected function getContainer(array $bundles = []): ContainerBuilder
     {
         return new ContainerBuilder(new ParameterBag([
             'kernel.cache_dir' => $this->rootDir.'/cache',
