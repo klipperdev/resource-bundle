@@ -82,6 +82,7 @@ final class KlipperResourceExtensionTest extends TestCase
             'kernel.root_dir' => sys_get_temp_dir().'/klipper_resource_bundle',
             'kernel.project_dir' => sys_get_temp_dir().'/klipper_resource_bundle',
             'kernel.charset' => 'UTF-8',
+            'kernel.container_class' => 'TestContainer',
         ]));
 
         $sfExt = new FrameworkExtension();
