@@ -38,6 +38,7 @@ class KlipperResourceExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('domain.xml');
+        $loader->load('resource_listener.xml');
 
         if (class_exists(Form::class)) {
             $loader->load('converter.xml');
