@@ -63,6 +63,7 @@ class ConverterPass implements CompilerPassInterface
 
         if (\in_array(ConverterInterface::class, $interfaces, true)) {
             $ref = new \ReflectionClass($class);
+
             /** @var ConverterInterface $instance */
             $instance = $ref->newInstanceWithoutConstructor();
             $type = $instance->getName();
