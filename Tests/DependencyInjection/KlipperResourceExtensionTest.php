@@ -91,7 +91,14 @@ final class KlipperResourceExtensionTest extends TestCase
         $container->registerExtension($sfExt);
         $container->registerExtension($extension);
 
-        $sfExt->load([['form' => true]], $container);
+        $sfExt->load([
+            [
+                'messenger' => [
+                    'reset_on_message' => true,
+                ],
+                'form' => true,
+            ],
+        ], $container);
         $extension->load($configs, $container);
 
         $bundle = new KlipperResourceBundle();
