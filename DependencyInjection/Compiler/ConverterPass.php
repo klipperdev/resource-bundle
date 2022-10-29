@@ -83,9 +83,9 @@ class ConverterPass implements CompilerPassInterface
      *
      * @param ContainerBuilder $container The container service
      *
-     * @throws
-     *
      * @return Definition[] The converter definitions
+     *
+     * @throws
      */
     private function findConverters(ContainerBuilder $container): array
     {
